@@ -24,37 +24,33 @@
 </head>
 
 <body>
-    <textarea id="myTextarea" value="" cols="50" rows="20"></textarea>
+<textarea id="myTextarea" value="" cols="50" rows="20"></textarea>
 
-    <fieldset>
-        <legend>New Form</legend>
-        <form action="" id="newForm" name="formUser">
-            Name___<input type="text" name="myName" value="Your name">
-            Surname__<input type="text" name="mySurname" value="Your Surname">
+<fieldset>
+    <legend>New Form</legend>
+    <form action="" id="newForm" name="formUser">
 
-            <textarea name="comments" cols="30" rows="15">Bio</textarea>
+        <input type="text" name="myName" value="Your name">
+        <input type="text" name="mySurname" value="Your Surname">
 
-            <input type="checkbox" name="accept" value="I accept">I accept
-            <input type="checkbox" name="acceptTime" value="I acceptTime">I accept one more
+        <textarea name="comments" cols="30" rows="15"></textarea>
 
-            <div>
-                <input type="radio" name="one" value="Yes">Yes
-            </div>
-            <div>
-                <input type="radio" name="one" value="No">No
-            </div>
+        <input type="checkbox" name="check">
 
-            <select name="country">
-                <option value="City">City</option>
-                <option value="Street">Street</option>
-                <option value="Number">Number</option>
-            </select>
+        <input type="radio" name="one">Yes
+        <input type="radio" name="one">No
 
-        </form>
-    </fieldset>
+        <select name="adress">
+            <option value="City">City</option>
+            <option value="Street">Street</option>
+            <option value="Number">Number</option>
+        </select>
+
+    </form>
+</fieldset>
 
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>

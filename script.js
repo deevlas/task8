@@ -6,7 +6,6 @@
 const textarea = document.getElementById("myTextarea")
 textarea.value = localStorage.getItem("textarea")
 textarea.oninput = (ev) => {
-    console.log(ev.target.value)
     localStorage.setItem("textarea", ev.target.value)
 }
 
@@ -16,27 +15,31 @@ textarea.oninput = (ev) => {
 // Сделайте ваш скрипт как можно более универсальным.
 
 
-let formUser = document.getElementById('myTextarea')
+let formUser = document.getElementById('newForm')
 
-let inputName = formUser.querySelectorAll('input')
-let textareaForm = formUser.querySelector('textarea')
-let selectForm = formUser.querySelector('select')
+for (const input of formUser) {
+    const keyInput = input.name;
+    input.value = localStorage.getItem(keyInput)
 
-for (const input of inputName) {
-    let keyInput = input.name + " " + input.type
-    let valueInput = localStorage.getItem(keyInput)
+    if (input.type === "checkbox" || input.type === "radio") {
 
-    if (valueInput) {
-        input.value = valueInput;
+        input.checked = false
+        if (input.value === "true") {
+            input.checked = true
+        }
     }
-    input.addEventListener('input', function () {
-        localStorage.setItem(keyInput, input.value);
-    })
-    // localStorage.clear()
+
+    input.oninput = (ev) => {
+
+        if (ev.target.type === "checkbox" || ev.target.type === "radio")
+            ev.target.checked
+                ? ev.target.value = true
+                : ev.target.value = false
+        localStorage.setItem(keyInput, ev.target.value)
+
+    }
 }
-
-
-
+// localStorage.clear()
 
 
 // -Дан текстареа. В него можно ввести данные, нажать кнопку "сохранить" и они "фикисруются" (в хранилище), затем поредактировать их, затем еще поредактировать и возможно еще.....
