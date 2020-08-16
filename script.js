@@ -46,6 +46,59 @@ for (const input of formUser) {
 // Требование : хранить историю своих изменений (даже после перезагрузки страницы).
 // Сверху над текстареа должны появится стрелочки, с помощью которых можно перемещаться по истории (не забудьте!чекпоинт истории - нажатеи кнопки сохранить).
 
+let prev = document.getElementById("prev")
+let next = document.getElementById("next")
+
+let buttonInBlock = document.getElementById("saveBut")
+
+let textareaWithButton = document.getElementById("textarea")
+textareaWithButton.value = localStorage.getItem("textareaWithButton")
+
+
+
+buttonInBlock.onclick = () => {
+    localStorage.setItem(localStorage.length + 1, textareaWithButton.value)
+}
+// console.log(textareaWithButton.name + '1')
+prev.onclick = () => {
+    let counter;
+    for (let key in localStorage) {
+        if (localStorage.hasOwnProperty(key)) {
+            if(localStorage.getItem(key) === textareaWithButton.value){
+                counter = key
+
+            }
+        }
+    }
+    if(counter === "1") {
+        prev.setAttribute("disabled", "disabled")
+    }
+    textareaWithButton.value = localStorage.getItem(counter -1)
+}
+next.onclick = () => {
+    let counter;
+    for (let key in localStorage) {
+        if (localStorage.hasOwnProperty(key)) {
+            if(localStorage.getItem(key) === textareaWithButton.value){
+                counter = key
+
+            }
+        }
+    }
+
+    if(counter === localStorage.length.toString()) {
+        next.setAttribute("disabled", "disabled")
+    }
+    textareaWithButton.value = localStorage.getItem(+(counter) + 1)
+
+
+}
+// localStorage.clear()
+
+
+
+
+
 // - Реализуйте записную книгу, хранящую данные в локальном хранилище.
 // Данные которые надо сохранять : ФИО, номер, почта, фирма, отдел, день рождения
 // Данные вводить через соответсвующую форму.

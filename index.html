@@ -8,7 +8,7 @@
     <style>
         #newForm {
             display: block;
-            margin-top: 50px;
+
         }
 
         input {
@@ -18,7 +18,21 @@
 
         #newForm textarea {
             display: block;
-            margin-top: 30px;
+
+        }
+        .button {
+            width: 100px;
+            height: 40px;
+            background-color: darkcyan;
+            color: aliceblue;
+        }
+        * {
+            margin-bottom: 20px;
+
+        }
+        button {
+            width: 60px;
+            height: 20px;
         }
     </style>
 </head>
@@ -45,9 +59,21 @@
             <option value="Street">Street</option>
             <option value="Number">Number</option>
         </select>
-
     </form>
 </fieldset>
+
+<div>
+    <button name="prev" id="prev">Prev</button>
+    <button name="next" id="next">Next</button>
+</div>
+<div id="block">
+    <textarea id="textarea" name="textarea" cols="40" rows="20"></textarea>
+    <div>
+        <input class="button" name="save" id="saveBut" type="button" value="Save">
+    </div>
+</div>
+
+
 
 
 <script src="script.js"></script>
