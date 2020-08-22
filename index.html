@@ -20,63 +20,127 @@
             display: block;
 
         }
+
         .button {
             width: 100px;
             height: 40px;
             background-color: darkcyan;
             color: aliceblue;
         }
+
         * {
             margin-bottom: 20px;
 
         }
+
         button {
             width: 60px;
             height: 20px;
+        }
+
+        table {
+            width: 100%;
+            height: 100px;
+        }
+
+        table td {
+            padding: 50px;
+            border: solid black 1px;
+        }
+
+        #mainBorder th {
+            padding: 20px;
+            border: solid black 1px;
         }
     </style>
 </head>
 
 <body>
-<textarea id="myTextarea" value="" cols="50" rows="20"></textarea>
+    <!--<textarea id="myTextarea" value="" cols="50" rows="20"></textarea>-->
 
-<fieldset>
-    <legend>New Form</legend>
-    <form action="" id="newForm" name="formUser">
+    <!--<fieldset>-->
+    <!--    <legend>New Form</legend>-->
+    <!--    <form action="" id="newForm" name="formUser">-->
 
-        <input type="text" name="myName" value="Your name">
-        <input type="text" name="mySurname" value="Your Surname">
+    <!--        <input type="text" name="myName" value="Your name">-->
+    <!--        <input type="text" name="mySurname" value="Your Surname">-->
 
-        <textarea name="comments" cols="30" rows="15"></textarea>
+    <!--        <textarea name="comments" cols="30" rows="15"></textarea>-->
 
-        <input type="checkbox" name="check">
+    <!--        <input type="checkbox" name="check">-->
 
-        <input type="radio" name="one">Yes
-        <input type="radio" name="one">No
+    <!--        <input type="radio" name="one">Yes-->
+    <!--        <input type="radio" name="one">No-->
 
-        <select name="adress">
-            <option value="City">City</option>
-            <option value="Street">Street</option>
-            <option value="Number">Number</option>
-        </select>
-    </form>
-</fieldset>
+    <!--        <select name="adress">-->
+    <!--            <option value="City">City</option>-->
+    <!--            <option value="Street">Street</option>-->
+    <!--            <option value="Number">Number</option>-->
+    <!--        </select>-->
+    <!--    </form>-->
+    <!--</fieldset>-->
 
-<div>
-    <button name="prev" id="prev">Prev</button>
-    <button name="next" id="next">Next</button>
-</div>
-<div id="block">
-    <textarea id="textarea" name="textarea" cols="40" rows="20"></textarea>
+    <!--<div>-->
+    <!--    <button name="prev" id="prev">Prev</button>-->
+    <!--    <button name="next" id="next">Next</button>-->
+    <!--</div>-->
+    <!--<div id="block">-->
+    <!--    <textarea id="textarea" name="textarea" cols="40" rows="20"></textarea>-->
+    <!--    <div>-->
+    <!--        <input class="button" name="save" id="saveBut" type="button" value="Save">-->
+    <!--    </div>-->
+    <!--</div>-->
+
+    <fieldset>
+        <legend>Workers</legend>
+        <form id="formUsers">
+            <label>ФИО</label>
+            <br>
+            <input type="text" name="FIO">
+            <br>
+            <label>Телефон</label>
+            <br>
+            <input type="tel" name="phone">
+            <br>
+            <label>Почта</label>
+            <br>
+            <input type="email" name="email">
+            <br>
+            <label>Фирма</label>
+            <br>
+            <input type="text" name="firm">
+            <br>
+            <label>Отдел</label>
+            <br>
+            <input type="text" name="department">
+            <br>
+            <label>День рождения</label>
+            <br>
+            <input type="date" name="birthday">
+            <br>
+            <input type="submit" name="saveForm">
+            <br>
+        </form>
+    </fieldset>
     <div>
-        <input class="button" name="save" id="saveBut" type="button" value="Save">
+        <table id="mainBorder">
+            <tr>
+                <th>id</th>
+                <th>FIO</th>
+                <th>phone</th>
+                <th>email</th>
+                <th>firm</th>
+                <th>department</th>
+                <th>birthday</th>
+                <th>edit</th>
+                <th>del</th>
+            </tr>
+        </table>
     </div>
-</div>
 
 
 
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
